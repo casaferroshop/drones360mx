@@ -1859,7 +1859,6 @@ function showQR(){
   const r=(QD[exp]&&QD[exp][bud])||QD.novato.medio;
   document.getElementById('qr-name').textContent=r.n;
   document.getElementById('qr-why').textContent=r.w;
-  document.getElementById('qr-amz').href=r.a;
   document.getElementById('qr-ml').href=r.m;
   document.getElementById('quiz-res').classList.add('show');
   document.querySelectorAll('.rec-pill').forEach(p=>p.style.display='none');
