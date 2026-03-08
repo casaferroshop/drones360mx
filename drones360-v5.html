@@ -112,12 +112,13 @@ body:hover #spotlight{opacity:1}
 .nav-search input{width:100%;background:rgba(0,0,0,.03);border:1px solid var(--rim);border-radius:100px;padding:.4rem .85rem .4rem 2.1rem;font-size:.8rem;color:var(--text);font-family:"Inter",sans-serif;outline:none;transition:all .2s}
 .nav-search input:focus{border-color:var(--blue);background:rgba(61,127,255,.06);box-shadow:0 0 0 3px rgba(61,127,255,.12)}
 .nav-search input::placeholder{color:var(--text3)}
-.nav-links{display:flex;align-items:center;gap:.15rem;margin-left:auto}
+.nav-links{display:flex;align-items:center;gap:.15rem;margin-left:auto;list-style:none}
+.nav-links li a{font-family:"Inter",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--text3);padding:.32rem .6rem;border-radius:var(--r);transition:color .15s;white-space:nowrap}.nav-links li a:hover{color:var(--text)}
 .nav-lnk{font-family:"Inter",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--text3);padding:.32rem .6rem;border-radius:var(--r);transition:color .15s;white-space:nowrap}
 .nav-lnk:hover{color:var(--text)}
 .nav-cta{background:var(--blue);color:#fff;padding:.38rem 1rem;border-radius:100px;font-family:"Inter",sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.05em;white-space:nowrap;transition:all .2s;box-shadow:0 0 20px var(--blue-glow)}
 .nav-cta:hover{background:#5a8fff;box-shadow:0 0 30px var(--blue-glow);transform:translateY(-1px)}
-@media(max-width:768px){.nav-lnk{display:none}.nav-search{max-width:180px}}
+@media(max-width:768px){.nav-links li a{font-size:.75rem!important}.nav-search{max-width:180px}}
 @media(max-width:480px){.nav-search{display:none}}
 
 /* ══════════ HERO ══════════ */
@@ -519,7 +520,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 .mob-open .mob-btn span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .mob-open .mob-btn span:nth-child(2){opacity:0}
 .mob-open .mob-btn span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-@media(max-width:600px){.mob-btn{display:flex}.nav-links,.nav-cta{display:none}.nav.mob-open .nav-links{display:flex;position:fixed;top:58px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(24px);flex-direction:column;padding:2rem 1.5rem;gap:.5rem;z-index:499}.nav.mob-open .nav-links .nav-lnk{display:block;font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid var(--rim);color:var(--text2)}.nav.mob-open .nav-links .nav-cta{display:inline-block;margin-top:1rem;text-align:center}}</style>
+@media(max-width:600px){.mob-btn{display:flex}.nav-links{display:none!important}.nav-search{display:none!important}.nav.mob-open .nav-links{display:flex!important;position:fixed;top:58px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(24px);flex-direction:column;padding:2rem 1.5rem;gap:0;z-index:499;list-style:none}.nav.mob-open .nav-links li{width:100%}.nav.mob-open .nav-links li a{display:block;font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid var(--rim);color:var(--text2);font-weight:500}}}</style>
 </head>
 <body>
 <!-- SPOTLIGHT CURSOR EFFECT -->
@@ -536,11 +537,11 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <input aria-label="Buscar drones" id="nsearch" oninput="searchF()" placeholder="Buscar drone..." type="search"/>
 </div>
 <ul class="nav-links">
-<li><a href="drones360-v5.html" style="font-weight:600; font-size: 0.95rem;">Ranking 2026</a></li>
-<li><a href="drones-para-principiantes-mexico.html" style="font-weight:600; font-size: 0.95rem;">Principiantes</a></li>
-<li><a href="drones-fpv-mexico.html" style="font-weight:600; font-size: 0.95rem;">FPV</a></li>
-<li><a href="drone-para-fotografia-aerea-mexico.html" style="font-weight:600; font-size: 0.95rem;">Cámara Pro</a></li>
-<li><a href="regulaciones-drones-mexico-afac.html" style="font-weight:600; font-size: 0.95rem;">AFAC</a></li>
+<li><a href="drones360-v5.html">Ranking 2026</a></li>
+<li><a href="drones-para-principiantes-mexico.html">Principiantes</a></li>
+<li><a href="drones-fpv-mexico.html">FPV</a></li>
+<li><a href="drone-para-fotografia-aerea-mexico.html">Cámara Pro</a></li>
+<li><a href="regulaciones-drones-mexico-afac.html">AFAC</a></li>
 </ul>
 <button class="mob-btn" onclick="document.querySelector('.nav').classList.toggle('mob-open')" aria-label="Menú"><span></span><span></span><span></span></button>
 </div>
