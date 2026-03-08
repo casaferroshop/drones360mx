@@ -1098,36 +1098,3 @@ if(scoresSec)observer.observe(scoresSec);
 </script>
 </body>
 </html>
-.pp-variant').forEach((v,j)=>v.classList.toggle('active',i===j));
-}
-
-// FAQ
-function toggleFaq(btn){
-  const ans=btn.nextElementSibling;
-  const wasOpen=btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(b=>{
-    b.classList.remove('open');
-    b.nextElementSibling.classList.remove('open');
-  });
-  if(!wasOpen){btn.classList.add('open');ans.classList.add('open');}
-}
-
-// Animate score bars and ring on scroll
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      if(e.target.id==='scores'){
-        document.getElementById('mainScore').classList.add('animated');
-        document.querySelectorAll('.sb-fill').forEach(bar=>{
-          bar.style.width=bar.dataset.w||'0%';
-        });
-      }
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:.25});
-const scoresSec=document.getElementById('scores');
-if(scoresSec)observer.observe(scoresSec);
-document.querySelectorAll('.nav-lnk,.nav-cta').forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav').classList.remove('mob-open')));</script>
-</body>
-</html>
