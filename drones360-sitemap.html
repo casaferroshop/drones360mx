@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="es-MX">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sitemap Estratégico — Drones360.mx</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+
+  --void:#ffffff; --deep:#f9fafb; --surface:#ffffff; --surface2:#f3f4f6;
+  --rim:#e5e7eb; --rim2:#d1d5db;
+  --text:#111827; --text2:#4b5563; --text3:#6b7280;
+  --blue:#2563eb; --cyan:#0284c7; --green:#059669;
+  --amber:#d97706; --red:#dc2626; --purple:#7c3aed;
+  --blue-glow:rgba(37,99,235,.2); --cyan-glow:rgba(2,132,199,.2);
+
+  --r:8px; --r2:14px; --r3:20px; --r4:28px;
+}
+body{font-family:"Inter",sans-serif;background:var(--void);color:var(--text);padding:2rem clamp(.75rem,4vw,3rem);line-height:1.6}
+::-webkit-scrollbar{width:4px};::-webkit-scrollbar-thumb{background:var(--rim2);border-radius:2px}
+
+/* HEADER */
+.hd{max-width:1400px;margin:0 auto 3rem;padding-bottom:2rem;border-bottom:1px solid var(--rim)}
+.hd-label{font-family:"Inter",sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem}
+.hd-label::before{content:"";display:inline-block;width:16px;height:1px;background:var(--cyan)}
+h1.hd-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:.03em;line-height:.9;margin-bottom:.6rem}
+h1.hd-title span{color:var(--cyan)}
+.hd-sub{font-size:.9rem;font-weight:300;color:var(--text2);max-width:600px;margin-bottom:1.5rem}
+.hd-stats{display:flex;gap:1px;background:var(--rim);border-radius:10px;overflow:hidden;width:fit-content}
+.hs{background:var(--surface);padding:.7rem 1.2rem;text-align:center}
+.hs-n{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:var(--text);letter-spacing:.03em;line-height:1;display:block}
+.hs-n.c{color:var(--cyan)}
+.hs-n.g{color:var(--green)}
+.hs-l{font-size:.8rem;font-family:"Inter",sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.1rem;display:block}
+
+/* LEGEND */
+.legend{max-width:1400px;margin:0 auto 2.5rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.lg{display:flex;align-items:center;gap:.4rem;background:var(--surface);border:1px solid var(--rim);border-radius:8px;padding:.4rem .8rem}
+.lg-dot{width:8px;height:8px;border-radius:50%}
+.lg-t{font-size:.8rem;font-family:"Inter",sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+
+/* SECTIONS */
+.sm-section{max-width:1400px;margin:0 auto 3rem}
+.sm-sec-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--rim)}
+.sm-sec-bar{width:3px;height:28px;border-radius:2px}
+.sm-sec-title{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.04em}
+.sm-sec-count{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--text3);background:var(--rim);padding:.15rem .45rem;border-radius:4px;margin-left:.2rem}
+.sm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:.75rem}
+
+/* PAGE CARDS */
+.pc{background:var(--surface);border:1px solid var(--rim);border-radius:14px;padding:1.25rem;display:flex;flex-direction:column;gap:.65rem;position:relative;overflow:hidden;transition:border-color .2s}
+.pc:hover{border-color:var(--acc,var(--rim2))}
+.pc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--acc,transparent)}
+.pc-head{display:flex;justify-content:space-between;align-items:center}
+.pc-tier{font-family:"Inter",sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pc-status{font-family:"Inter",sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .45rem;border-radius:4px}
+.pc-pri{font-family:"Bebas Neue",sans-serif;font-size:3rem;color:var(--text);line-height:.9;letter-spacing:.04em;border:1px solid;border-radius:8px;width:fit-content;padding:.1rem .6rem}
+.pc-title{font-family:"Inter",sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.02em;color:var(--text);line-height:1.3}
+.pc-url code{font-family:"JetBrains Mono",monospace;font-size:.88rem;color:var(--text3);background:var(--rim);padding:.2rem .45rem;border-radius:4px}
+.pc-meta{display:flex;flex-direction:column;gap:.2rem}
+.pm{display:flex;gap:.4rem;align-items:baseline}
+.pk{font-family:"Inter",sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);min-width:64px}
+.pv{font-size:.85rem;font-weight:300;color:var(--text2)}
+.kv{font-family:"JetBrains Mono",monospace;font-size:.82rem;font-weight:500}
+.pc-desc{font-size:.88rem;font-weight:300;color:var(--text2);line-height:1.6}
+.pc-notes{font-size:.8rem;font-weight:300;color:var(--text3);background:rgba(255,255,255,.02);border:1px solid var(--rim);border-radius:6px;padding:.4rem .6rem;font-family:"JetBrains Mono",monospace}
+.ilinks{font-size:.88rem;color:var(--text3);display:flex;gap:.3rem;flex-wrap:wrap;align-items:center}
+.ilinks code{font-family:"JetBrains Mono",monospace;font-size:.85rem;background:rgba(61,127,255,.08);color:var(--blue);padding:.1rem .3rem;border-radius:3px}
+
+/* ASINS TABLE */
+.asin-section{max-width:1400px;margin:0 auto 3rem}
+.asin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.5rem;margin-top:1.2rem}
+.asin-card{background:var(--surface);border:1px solid var(--rim);border-radius:10px;padding:.9rem;display:flex;gap:.85rem;align-items:center}
+.asin-img{width:52px;height:52px;object-fit:contain;border-radius:6px;background:rgba(0,207,255,.04);border:1px solid var(--rim);flex-shrink:0}
+.asin-img-ph{width:52px;height:52px;border-radius:6px;background:var(--rim);border:1px solid var(--rim2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.asin-info{flex:1;min-width:0}
+.asin-name{font-family:"Inter",sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--text);margin-bottom:.2rem}
+.asin-code{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--cyan);display:block}
+.asin-status{font-family:"Inter",sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.asin-ok{color:var(--green)}
+.asin-no{color:var(--text3)}
+
+/* TIMELINE */
+.timeline{max-width:900px;margin:0 auto 3rem}
+.tl{border-left:1px solid var(--rim);padding-left:1.5rem;display:flex;flex-direction:column;gap:1.25rem;margin-top:1.2rem}
+.tli{position:relative}
+.tli::before{content:"";position:absolute;left:-1.6rem;top:.2rem;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--rim2)}
+.tli.now::before{background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 10px rgba(0,207,255,.4)}
+.tli-date{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--text3);margin-bottom:.2rem}
+.tli-title{font-family:"Inter",sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.03em;color:var(--text);margin-bottom:.15rem}
+.tli-desc{font-size:.85rem;font-weight:300;color:var(--text2)}
+
+/* FOOTER */
+.sm-footer{max-width:1400px;margin:3rem auto 0;border-top:1px solid var(--rim);padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.sf-t{font-size:.82rem;font-weight:300;color:var(--text3)}
+
+@media(max-width:600px){.hd-stats{flex-wrap:wrap}.sm-grid{grid-template-columns:1fr}}
+
+
+.sp-rank { color: rgba(17, 24, 39, 0.05) !important; -webkit-text-stroke: 0 !important; }
+
+    /* GREY BOX FIX */
+    .variants-grid, .related-grid, .asin-grid, .age-grid, .safety-grid, .guide-grid, .meth-grid, .pc-grid, .ds-stats {
+        background: transparent !important;
+        gap: 1.25rem !important;
+    }
+    .vcard, .rc, .ds-stat, .pc-col {
+        border: 1px solid var(--rim) !important;
+        border-radius: var(--r3) !important;
+    }
+    .variants-grid, .related-grid {
+        border: none !important;
+    }
+
+    /* V5 HERO CONTRAST FIX */
+    .phero .qspec, .phero .aw, .phero .ph-rating-row, .phero .ph-badge {
+        background: rgba(255, 255, 255, 0.92) !important;
+        border: 1px solid rgba(255, 255, 255, 1) !important;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    }
+    .phero .qspec-val, .phero .aw-v, .phero .aw-t, .phero .ph-rating-cnt {
+        color: #111827 !important;
+        font-weight: 700;
+    }
+footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem clamp(.75rem,4vw,2.5rem) 1.5rem}
+.footer-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rim);margin-bottom:1.25rem}
+.footer-logo{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;letter-spacing:.06em;color:var(--text)}.footer-logo span{color:var(--cyan)}
+.footer-desc{font-size:.88rem;font-weight:300;color:var(--text3);margin-top:.6rem;line-height:1.65;max-width:230px}
+.footer-col h4{font-family:"Inter",sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.8rem}
+.footer-col ul{list-style:none}.footer-col li{margin-bottom:.38rem}
+.footer-col a{font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s}.footer-col a:hover{color:var(--cyan)}
+.footer-bot{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-bot span{font-size:.8rem;font-weight:300;color:var(--text3)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="hd">
+<div class="hd-label">Estrategia de contenido</div>
+<h1 class="hd-title">Sitemap<br/><span>Drones360.mx</span></h1>
+<p class="hd-sub">17 páginas estratégicas para dominar el SEO de drones en México. Cada página apunta a keywords específicas, se interconectan entre sí y están diseñadas para convertir.</p>
+<div class="hd-stats">
+<div class="hs"><span class="hs-n c">17</span><span class="hs-l">Páginas</span></div>
+<div class="hs"><span class="hs-n">138,000</span><span class="hs-l">Vol/mes est.</span></div>
+<div class="hs"><span class="hs-n c">13</span><span class="hs-l">ASINs reales</span></div>
+<div class="hs"><span class="hs-n g">4</span><span class="hs-l">Niveles</span></div>
+<div class="hs"><span class="hs-n">V4</span><span class="hs-l">Hub listo</span></div>
+</div>
+</div>
+<div class="legend">
+<div class="lg"><div class="lg-dot" style="background:#00cfff"></div><span class="lg-t">Tier 1 · Hub Principal</span></div>
+<div class="lg"><div class="lg-dot" style="background:#00ff88"></div><span class="lg-t">Tier 2 · Producto (alta conversión)</span></div>
+<div class="lg"><div class="lg-dot" style="background:#3d7fff"></div><span class="lg-t">Tier 3 · Categoría (alto tráfico)</span></div>
+<div class="lg"><div class="lg-dot" style="background:#a855f7"></div><span class="lg-t">Tier 4 · Guía (autoridad SEO)</span></div>
+</div>
+<div class="sm-section">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#00cfff"></div>
+<h2 class="sm-sec-title" style="color:#00cfff">Tier 1 — Hub Principal (ya publicado)</h2>
+<span class="sm-sec-count">1 página</span>
+</div>
+<div class="sm-grid"><div class="pc" style="--acc:#00cfff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00cfff">TIER 1 · HUB</span>
+<span class="pc-status" style="background:#00ff88;color:#000">✅ DONE</span>
+</div>
+<div class="pc-pri" style="background:#00cfff15;border-color:#00cfff30">P0</div>
+<h3 class="pc-title">Inicio — Drones360.mx</h3>
+<div class="pc-url"><code>/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">mejores drones mexico 2026</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00cfff">22,000/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Comparativa hub</span></div>
+</div>
+<p class="pc-desc">Hub principal. 20 drones, quiz, comparador, MSI calc.</p>
+<div class="pc-notes">📌 V4 — 195KB, imágenes reales 13 ASINs</div>
+<div class="ilinks">🔗 <code>T2×5</code> · <code>T3×6</code> · <code>T4×5</code></div>
+</div></div>
+</div>
+<div class="sm-section">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#00ff88"></div>
+<h2 class="sm-sec-title" style="color:#00ff88">Tier 2 — Páginas de Producto · Alta Conversión</h2>
+<span class="sm-sec-count">5 páginas</span>
+</div>
+<div class="sm-grid"><div class="pc" style="--acc:#00ff88">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00ff88">TIER 2 · PRODUCTO</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#00ff8815;border-color:#00ff8830">P1</div>
+<h3 class="pc-title">DJI Mini 4 Pro Precio México 2026 — Review Completa</h3>
+<div class="pc-url"><code>/dji-mini-4-pro-precio-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji mini 4 pro precio mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00ff88">9,900/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra directa</span></div>
+</div>
+<p class="pc-desc">Review profunda + precio actual + todas las variantes RC-N2/RC2/Fly More</p>
+<div class="pc-notes">📌 ASIN: B0CFF38HMJ · imagen real Amazon · schema Review + Product</div>
+<div class="ilinks">🔗 <code>Hub</code> · <code>/drones-para-principiantes-mexico/</code> · <code>/dji-mini-4-pro-vs-dji-air-3s/</code></div>
+</div>
+<div class="pc" style="--acc:#00ff88">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00ff88">TIER 2 · PRODUCTO</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#00ff8815;border-color:#00ff8830">P1</div>
+<h3 class="pc-title">DJI Mini 4K México 2026 — El Más Barato de DJI</h3>
+<div class="pc-url"><code>/dji-mini-4k-precio-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji mini 4k precio mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00ff88">5,400/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra directa / presupuesto</span></div>
+</div>
+<p class="pc-desc">El drone DJI más económico. Ideal para quien quiere marca DJI sin gastar de más.</p>
+<div class="pc-notes">📌 ASIN: B0CXJDDJ9X · mejor relación calidad-precio del catálogo DJI</div>
+</div>
+<div class="pc" style="--acc:#00ff88">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00ff88">TIER 2 · PRODUCTO</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#00ff8815;border-color:#00ff8830">P1</div>
+<h3 class="pc-title">DJI Air 3S Review México 2026 — CMOS 1 Pulgada</h3>
+<div class="pc-url"><code>/dji-air-3s-review-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji air 3s review mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00ff88">4,400/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Review + compra</span></div>
+</div>
+<p class="pc-desc">El mejor drone con cámara del mercado. Sensor 1" CMOS, 45 min, Night Mode.</p>
+<div class="pc-notes">📌 ASIN: B07FVZFX73 · imagen real Amazon</div>
+<div class="ilinks">🔗 <code>Hub</code> · <code>/dji-mini-4-pro-vs-dji-air-3s/</code> · <code>/drones-profesionales-mexico/</code></div>
+</div>
+<div class="pc" style="--acc:#00ff88">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00ff88">TIER 2 · PRODUCTO</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#00ff8815;border-color:#00ff8830">P1</div>
+<h3 class="pc-title">DJI Neo Precio México 2026 — El Más Ligero de DJI</h3>
+<div class="pc-url"><code>/dji-neo-precio-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji neo precio mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00ff88">3,600/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra · regalo</span></div>
+</div>
+<p class="pc-desc">135g, despega de la mano. El drone más fácil del mundo. Perfecto como regalo.</p>
+<div class="pc-notes">📌 ASIN: B07FTPX71F · muy buscado para regalo</div>
+</div>
+<div class="pc" style="--acc:#00ff88">
+<div class="pc-head">
+<span class="pc-tier" style="color:#00ff88">TIER 2 · PRODUCTO</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#00ff8815;border-color:#00ff8830">P1</div>
+<h3 class="pc-title">DJI Avata 2 Precio México 2026 — Mejor Drone FPV</h3>
+<div class="pc-url"><code>/dji-avata-2-precio-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji avata 2 precio mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#00ff88">2,900/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra FPV</span></div>
+</div>
+<p class="pc-desc">El rey del FPV. 4K/100fps inmersivo con Goggles 3. La experiencia FPV definitiva.</p>
+<div class="pc-notes">📌 ASIN: B0CS6HVW6P</div>
+</div></div>
+</div>
+<div class="sm-section">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#3d7fff"></div>
+<h2 class="sm-sec-title" style="color:#3d7fff">Tier 3 — Páginas de Categoría · Alto Volumen</h2>
+<span class="sm-sec-count">6 páginas</span>
+</div>
+<div class="sm-grid"><div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">10 Mejores Drones Baratos en México 2026 — Desde $1,499</h3>
+<div class="pc-url"><code>/drones-baratos-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drones baratos mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">18,000/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Investigación / presupuesto</span></div>
+</div>
+<p class="pc-desc">Los mejores drones económicos con GPS, 4K y buena batería por menos de $5,000 MXN.</p>
+<div class="pc-notes">📌 Foco en Holy Stone, Potensic, Ruko, DJI Neo y Mini 4K</div>
+<div class="ilinks">🔗 <code>Hub</code> · <code>/drones-para-principiantes-mexico/</code> · <code>/cuanto-cuesta-drone-mexico/</code></div>
+</div>
+<div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">Mejores Drones para Principiantes México 2026</h3>
+<div class="pc-url"><code>/drones-para-principiantes-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drone para principiantes mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">14,500/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Informacional + compra</span></div>
+</div>
+<p class="pc-desc">Guía definitiva: qué buscar, cuánto gastar, cuáles son los más fáciles de volar.</p>
+<div class="pc-notes">📌 Top 5 por facilidad de uso · quiz integrado</div>
+</div>
+<div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">Drones Sin Registro en México 2026 — Menos de 249g</h3>
+<div class="pc-url"><code>/drones-sin-registro-afac-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drone sin registro mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">12,200/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Regulatorio + compra</span></div>
+</div>
+<p class="pc-desc">Todos los drones que no requieren registro ante la AFAC. La regla de los 249g explicada.</p>
+<div class="pc-notes">📌 Muy alto tráfico · ventaja enorme vs competidores que no lo explican bien</div>
+<div class="ilinks">🔗 <code>Hub</code> · <code>/regulaciones-drones-mexico-afac/</code> · <code>/drones-para-principiantes-mexico/</code></div>
+</div>
+<div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">Mejores Drones 4K en México 2026 — Comparativa Completa</h3>
+<div class="pc-url"><code>/drones-4k-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drones 4k mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">8,800/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Comparativa</span></div>
+</div>
+<p class="pc-desc">Todos los drones con cámara 4K real disponibles en México con precios en pesos.</p>
+<div class="pc-notes">📌 Filtrar por calidad real: 4K/60fps vs 4K/30fps vs 4K EIS</div>
+</div>
+<div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">Mejores Drones para Niños México 2026 — Seguros y Fáciles</h3>
+<div class="pc-url"><code>/drones-para-ninos-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drone para niños mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">7,600/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Regalo · padres</span></div>
+</div>
+<p class="pc-desc">Los drones más seguros para niños: DJI Tello, Neo, Mini 4K. Con edades recomendadas.</p>
+<div class="pc-notes">📌 Tráfico de regalo · pico diciembre · alta conversión</div>
+</div>
+<div class="pc" style="--acc:#3d7fff">
+<div class="pc-head">
+<span class="pc-tier" style="color:#3d7fff">TIER 3 · CATEGORÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#3d7fff15;border-color:#3d7fff30">P2</div>
+<h3 class="pc-title">Mejores Drones FPV en México 2026 — Vuelo Inmersivo</h3>
+<div class="pc-url"><code>/drones-fpv-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drones fpv mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#3d7fff">5,200/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Nicho FPV</span></div>
+</div>
+<p class="pc-desc">DJI Avata 2 vs alternativas FPV. Todo sobre vuelo en primera persona en México.</p>
+<div class="pc-notes">📌 Avata 2 es la gran conversión aquí</div>
+</div></div>
+</div>
+<div class="sm-section">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#a855f7"></div>
+<h2 class="sm-sec-title" style="color:#a855f7">Tier 4 — Guías de Autoridad · SEO de Largo Plazo</h2>
+<span class="sm-sec-count">5 páginas</span>
+</div>
+<div class="sm-grid"><div class="pc" style="--acc:#a855f7">
+<div class="pc-head">
+<span class="pc-tier" style="color:#a855f7">TIER 4 · GUÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#a855f715;border-color:#a855f730">P3</div>
+<h3 class="pc-title">Regulaciones de Drones en México 2026 — Guía AFAC Completa</h3>
+<div class="pc-url"><code>/regulaciones-drones-mexico-afac/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">regulaciones drones mexico 2026</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#a855f7">6,800/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Informacional</span></div>
+</div>
+<p class="pc-desc">Todo sobre la ley de drones en México: registro, permisos, zonas prohibidas, AFAC.</p>
+<div class="pc-notes">📌 Página de autoridad. Atrae links naturales. Citar afac.gob.mx</div>
+</div>
+<div class="pc" style="--acc:#a855f7">
+<div class="pc-head">
+<span class="pc-tier" style="color:#a855f7">TIER 4 · GUÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#a855f715;border-color:#a855f730">P3</div>
+<h3 class="pc-title">¿Cuánto Cuesta un Drone en México? — Guía de Precios 2026</h3>
+<div class="pc-url"><code>/cuanto-cuesta-drone-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">cuanto cuesta un drone en mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#a855f7">5,900/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Investigación de precio</span></div>
+</div>
+<p class="pc-desc">Tabla completa de precios de drones en México por rango: económico, medio, profesional.</p>
+<div class="pc-notes">📌 Keyword exacta de FAQ con alto volumen · buena para featured snippet</div>
+</div>
+<div class="pc" style="--acc:#a855f7">
+<div class="pc-head">
+<span class="pc-tier" style="color:#a855f7">TIER 4 · GUÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#a855f715;border-color:#a855f730">P3</div>
+<h3 class="pc-title">Mejores Drones para Fotografía Aérea México 2026</h3>
+<div class="pc-url"><code>/drone-para-fotografia-aerea-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drone fotografia aerea mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#a855f7">4,100/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra profesional</span></div>
+</div>
+<p class="pc-desc">Los mejores drones para fotografía y video profesional: sensor, RAW, D-Log.</p>
+<div class="pc-notes">📌 Alta intención de compra. Mavic 4 Pro / Air 3S como heroes</div>
+</div>
+<div class="pc" style="--acc:#a855f7">
+<div class="pc-head">
+<span class="pc-tier" style="color:#a855f7">TIER 4 · GUÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#a855f715;border-color:#a855f730">P3</div>
+<h3 class="pc-title">DJI Mini 4 Pro vs Air 3S — ¿Cuál Comprar en México?</h3>
+<div class="pc-url"><code>/dji-mini-4-pro-vs-dji-air-3s/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">dji mini 4 pro vs air 3s</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#a855f7">2,800/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Comparativa directa</span></div>
+</div>
+<p class="pc-desc">Comparación detallada: sensor, obstacle avoidance, peso, precio y MSI en México.</p>
+<div class="pc-notes">📌 Comparativas directas tienen muy alta conversión</div>
+</div>
+<div class="pc" style="--acc:#a855f7">
+<div class="pc-head">
+<span class="pc-tier" style="color:#a855f7">TIER 4 · GUÍA</span>
+<span class="pc-status" style="background:#1a1a35;color:#8080aa">⏳ PENDIENTE</span>
+</div>
+<div class="pc-pri" style="background:#a855f715;border-color:#a855f730">P3</div>
+<h3 class="pc-title">Mejores Drones Profesionales México 2026 — Para Comerciales</h3>
+<div class="pc-url"><code>/drones-profesionales-mexico/</code></div>
+<div class="pc-meta">
+<div class="pm"><span class="pk">Keyword</span><span class="pv">drones profesionales mexico</span></div>
+<div class="pm"><span class="pk">Volumen</span><span class="pv kv" style="color:#a855f7">3,900/mes</span></div>
+<div class="pm"><span class="pk">Intención</span><span class="pv">Compra B2B</span></div>
+</div>
+<p class="pc-desc">Mavic 3 Pro, Air 3S, Mavic 4 Pro. Todo para uso comercial, inmobiliario y cine.</p>
+<div class="pc-notes">📌 Ticket alto = comisión alta</div>
+</div></div>
+</div>
+<!-- ASIN DATABASE -->
+<div class="asin-section">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#ff9900"></div>
+<h2 class="sm-sec-title" style="color:#ff9900">Base de ASINs Amazon.mx</h2>
+<span class="sm-sec-count">13/20 con imagen real</span>
+</div>
+<div class="asin-grid">
+<div class="asin-card">
+<img alt="DJI Mini 4 Pro" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0CFF38HMJ&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 4 Pro</div>
+<code class="asin-code">B0CFF38HMJ</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Air 3S" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B07FVZFX73&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Air 3S</div>
+<code class="asin-code">B07FVZFX73</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Mavic 3 Pro" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0BYHSDY4C&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mavic 3 Pro</div>
+<code class="asin-code">B0BYHSDY4C</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Mini 3 Pro" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B09VK5SFHW&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 3 Pro</div>
+<code class="asin-code">B09VK5SFHW</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Avata 2" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0CS6HVW6P&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Avata 2</div>
+<code class="asin-code">B0CS6HVW6P</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Air 3" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0C7GT17L3&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Air 3</div>
+<code class="asin-code">B0C7GT17L3</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Mini 3" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0BL3T49JF&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 3</div>
+<code class="asin-code">B0BL3T49JF</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Neo" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B07FTPX71F&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Neo</div>
+<code class="asin-code">B07FTPX71F</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Mini 4K" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0CXJDDJ9X&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 4K</div>
+<code class="asin-code">B0CXJDDJ9X</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Flip" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0DJ1H6KCP&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Flip</div>
+<code class="asin-code">B0DJ1H6KCP</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="Holy Stone HS720E" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B085HNMHKJ&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">Holy Stone HS720E</div>
+<code class="asin-code">B085HNMHKJ</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="DJI Mini 2 SE" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0BZXTNQD4&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 2 SE</div>
+<code class="asin-code">B0BZXTNQD4</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<img alt="Holy Stone HS720" class="asin-img" loading="lazy" onerror="this.style.display='none'" src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B07V3CLLCV&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=MX&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=drones360-20"/>
+<div class="asin-info">
+<div class="asin-name">Holy Stone HS720</div>
+<code class="asin-code">B07V3CLLCV</code>
+<span class="asin-status asin-ok">✅ Imagen real</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">DJI Mavic 4 Pro</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">Potensic ATOM SE</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">Potensic ATOM</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">Ruko F11 Pro</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">DJI Mavic 3 Classic</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">DJI Mini 5 Pro</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div><div class="asin-card">
+<div class="asin-img-ph">🚁</div>
+<div class="asin-info">
+<div class="asin-name">DJI Tello</div>
+<code class="asin-code">search URL</code>
+<span class="asin-status asin-no">🎨 SVG premium</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TIMELINE -->
+<div class="timeline">
+<div class="sm-sec-head">
+<div class="sm-sec-bar" style="background:#ffb800"></div>
+<h2 class="sm-sec-title" style="color:#ffb800">Plan de Publicación</h2>
+</div>
+<div class="tl">
+<div class="tli now">
+<div class="tli-date">Marzo 2026 — AHORA</div>
+<div class="tli-title">✅ Hub Principal V4 publicado</div>
+<div class="tli-desc">20 drones, imágenes reales, quiz, comparador, MSI. 195KB optimizado.</div>
+</div>
+<div class="tli">
+<div class="tli-date">Semana 1–2</div>
+<div class="tli-title">Tier 2 — Top 5 páginas de producto</div>
+<div class="tli-desc">DJI Mini 4 Pro + Air 3S + Mini 4K + Neo + Avata 2. Una por día con review completa e imágenes Amazon.</div>
+</div>
+<div class="tli">
+<div class="tli-date">Semana 3–4</div>
+<div class="tli-title">Tier 3 — 6 páginas de categoría</div>
+<div class="tli-desc">Baratos, Principiantes, Sin Registro, 4K, Niños, FPV. Alto volumen de búsqueda.</div>
+</div>
+<div class="tli">
+<div class="tli-date">Mes 2</div>
+<div class="tli-title">Tier 4 — Guías de autoridad + internal linking</div>
+<div class="tli-desc">AFAC, Precios, Fotografía, Comparativas directas. Construyen autoridad de dominio.</div>
+</div>
+<div class="tli">
+<div class="tli-date">Mes 3+</div>
+<div class="tli-title">Drones individuales restantes + actualizaciones</div>
+<div class="tli-desc">Mini 3 Pro, Mavic 3 Pro, Air 3, Flip. Actualización mensual de precios en todas las páginas.</div>
+</div>
+</div>
+</div>
+<div class="sm-footer">
+<span class="sf-t">✦ Drones360.mx — Sitemap Estratégico v1.0 · Marzo 2026</span>
+<span class="sf-t">17 páginas · 4 niveles · ~127K búsquedas/mes de alcance potencial</span>
+</div>
+</body>
+</html>
