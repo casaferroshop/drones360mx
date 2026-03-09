@@ -112,13 +112,12 @@ body:hover #spotlight{opacity:1}
 .nav-search input{width:100%;background:rgba(0,0,0,.03);border:1px solid var(--rim);border-radius:100px;padding:.4rem .85rem .4rem 2.1rem;font-size:.8rem;color:var(--text);font-family:"Inter",sans-serif;outline:none;transition:all .2s}
 .nav-search input:focus{border-color:var(--blue);background:rgba(61,127,255,.06);box-shadow:0 0 0 3px rgba(61,127,255,.12)}
 .nav-search input::placeholder{color:var(--text3)}
-.nav-links{display:flex;align-items:center;gap:.15rem;margin-left:auto;list-style:none}
-.nav-links li a{font-family:"Inter",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--text3);padding:.32rem .6rem;border-radius:var(--r);transition:color .15s;white-space:nowrap}.nav-links li a:hover{color:var(--text)}
-.nav-lnk{font-family:"Inter",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--text3);padding:.32rem .6rem;border-radius:var(--r);transition:color .15s;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:.15rem;margin-left:auto}
+.nav-lnk{font-family:"Inter",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;color:var(--text3);padding:.32rem .6rem;border-radius:var(--r);transition:color .15s;white-space:nowrap;text-decoration:none}
 .nav-lnk:hover{color:var(--text)}
 .nav-cta{background:var(--blue);color:#fff;padding:.38rem 1rem;border-radius:100px;font-family:"Inter",sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.05em;white-space:nowrap;transition:all .2s;box-shadow:0 0 20px var(--blue-glow)}
 .nav-cta:hover{background:#5a8fff;box-shadow:0 0 30px var(--blue-glow);transform:translateY(-1px)}
-@media(max-width:768px){.nav-links li a{font-size:.75rem!important}.nav-search{max-width:180px}}
+@media(max-width:768px){.nav-lnk{font-size:.75rem!important}.nav-search{max-width:180px}}
 @media(max-width:480px){.nav-search{display:none}}
 
 /* ══════════ HERO ══════════ */
@@ -549,8 +548,6 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
   list-style:none;
   overflow-y:auto;
 }
-.nav.mob-open .nav-links li{width:100%}
-.nav.mob-open .nav-links li a,
 .nav.mob-open .nav-links .nav-lnk{
   display:block!important;
   font-size:1.1rem;
@@ -559,6 +556,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
   color:var(--text2)!important;
   font-weight:500;
   white-space:normal;
+  letter-spacing:.02em;
 }
 .nav.mob-open .nav-links .nav-cta{
   display:inline-block!important;
@@ -585,13 +583,14 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <span class="nav-search-ic">⌕</span>
 <input aria-label="Buscar drones" id="nsearch" oninput="searchF()" placeholder="Buscar drone..." type="search"/>
 </div>
-<ul class="nav-links">
-<li><a href="/">Ranking 2026</a></li>
-<li><a href="drones-para-principiantes-mexico">Principiantes</a></li>
-<li><a href="drones-fpv-mexico">FPV</a></li>
-<li><a href="drone-para-fotografia-aerea-mexico">Cámara Pro</a></li>
-<li><a href="regulaciones-drones-mexico-afac">AFAC</a></li>
-</ul>
+<div class="nav-links">
+<a class="nav-lnk" href="/">RANKING</a>
+<a class="nav-lnk" href="/drones-para-principiantes-mexico">PRINCIPIANTES</a>
+<a class="nav-lnk" href="/drones-fpv-mexico">FPV</a>
+<a class="nav-lnk" href="/drone-para-fotografia-aerea-mexico">CÁMARA</a>
+<a class="nav-lnk" href="/regulaciones-drones-mexico-afac">AFAC</a>
+<a class="nav-cta" href="/">VER RANKING 2026</a>
+</div>
 <button class="mob-btn" onclick="document.querySelector('.nav').classList.toggle('mob-open')" aria-label="Menú"><span></span><span></span><span></span></button>
 </div>
 </nav>
