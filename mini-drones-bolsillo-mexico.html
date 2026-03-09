@@ -2006,7 +2006,29 @@
     .mob-open .mob-btn span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .mob-open .mob-btn span:nth-child(2){opacity:0}
     .mob-open .mob-btn span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    @media(max-width:900px){.mob-btn{display:flex!important}.nav-links{display:none!important}}.nav.mob-open .nav-links{display:flex!important;position:fixed!important;top:58px!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:calc(100vh - 58px)!important;background:#ffffff!important;flex-direction:column!important;padding:1.5rem!important;gap:0!important;z-index:9999!important;overflow-y:auto!important}.nav.mob-open .nav-links .nav-lnk{display:block!important;width:100%!important;font-size:1.15rem!important;padding:1rem 0!important;border-bottom:1px solid #e5e7eb!important;color:#374151!important;font-weight:500!important;text-decoration:none!important;background:transparent!important;box-shadow:none!important;border-radius:0!important}.nav.mob-open .nav-links .nav-cta{display:block!important;width:100%!important;margin-top:1.5rem!important;text-align:center!important;padding:.85rem 1.5rem!important;font-size:1rem!important;border-radius:12px!important;background:#2563eb!important;color:#fff!important}</style>
+    @media(max-width:900px){.mob-btn{display:flex!important}.nav-links{display:none!important}}.nav.mob-open .nav-links{display:flex!important;position:fixed!important;top:58px!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:calc(100vh - 58px)!important;background:#ffffff!important;flex-direction:column!important;padding:1.5rem!important;gap:0!important;z-index:9999!important;overflow-y:auto!important}.nav.mob-open .nav-links .nav-lnk{display:block!important;width:100%!important;font-size:1.15rem!important;padding:1rem 0!important;border-bottom:1px solid #e5e7eb!important;color:#374151!important;font-weight:500!important;text-decoration:none!important;background:transparent!important;box-shadow:none!important;border-radius:0!important}.nav.mob-open .nav-links .nav-cta{display:block!important;width:100%!important;margin-top:1.5rem!important;text-align:center!important;padding:.85rem 1.5rem!important;font-size:1rem!important;border-radius:12px!important;background:#2563eb!important;color:#fff!important}
+/* ═══ MEGA MENU ═══ */
+.nav-mega-wrap{position:relative}
+.mega-dropdown{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:680px;background:#fff;border:1px solid var(--rim);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.12),0 4px 12px rgba(0,0,0,.06);padding:1.5rem;z-index:600;
+display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+.nav-mega-wrap.mega-open .mega-dropdown,.nav-mega-wrap:hover .mega-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-col-title{font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--rim)}
+.mega-col a{display:block;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text2);padding:.3rem 0;text-decoration:none;transition:color .15s}
+.mega-col a:hover{color:var(--blue)}
+
+@media(max-width:900px){
+  .mega-dropdown{display:none!important}
+  .nav-mega-wrap .nav-mega-trigger{display:none!important}
+  .nav.mob-open .nav-links .nav-mega-wrap{display:none!important}
+}
+
+/* ═══ MOBILE EXTRA LINKS ═══ */
+.mob-extra{display:none}
+.nav.mob-open .mob-extra{display:block!important;margin-top:.5rem;padding-top:.5rem;border-top:2px solid var(--rim)}
+.mob-extra-title{font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:1rem;margin-bottom:.25rem;padding-left:0}
+.nav.mob-open .mob-extra .nav-lnk{font-size:1rem!important;padding:.7rem 0!important;border-bottom:1px solid #f3f4f6!important;color:#6b7280!important}
+
+</style>
 </head>
 
 <body>
@@ -2023,8 +2045,44 @@
       <a class="nav-lnk" href="/drones-fpv-mexico">FPV</a>
       <a class="nav-lnk" href="/drone-para-fotografia-aerea-mexico">CÁMARA</a>
       <a class="nav-lnk" href="/cuanto-cuesta-drone-mexico">PRECIOS</a>
-      <a class="nav-lnk" href="/drones-profesionales-mexico">PRO</a>
       <a class="nav-lnk" href="/regulaciones-drones-mexico-afac">AFAC</a>
+      <div class="nav-mega-wrap">
+        <a class="nav-lnk nav-mega-trigger" href="javascript:void(0)" onclick="document.querySelector('.nav-mega-wrap').classList.toggle('mega-open')">MÁS ▾</a>
+        <div class="mega-dropdown">
+          <div class="mega-col">
+            <div class="mega-col-title">Reviews</div>
+            <a href="/dji-mini-4-pro-precio-mexico">DJI Mini 4 Pro</a>
+            <a href="/dji-air-3s-review-mexico">DJI Air 3S</a>
+            <a href="/dji-avata-2-precio-mexico">DJI Avata 2</a>
+            <a href="/dji-neo-precio-mexico">DJI Neo</a>
+            <a href="/dji-mini-4k-precio-mexico">DJI Mini 4K</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Guías</div>
+            <a href="/cuanto-cuesta-drone-mexico">¿Cuánto Cuesta?</a>
+            <a href="/que-es-un-drone-guia-completa">¿Qué es un Drone?</a>
+            <a href="/regulaciones-drones-mexico-afac">Regulaciones AFAC</a>
+            <a href="/drones-sin-registro-afac-mexico">Sin Registro</a>
+            <a href="/dji-mini-4-pro-vs-dji-air-3s">Mini 4 Pro vs Air 3S</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Categorías</div>
+            <a href="/drones-para-principiantes-mexico">Principiantes</a>
+            <a href="/drones-profesionales-mexico">Profesionales</a>
+            <a href="/drones-4k-mexico">Drones 4K</a>
+            <a href="/drones-baratos-mexico">Drones Baratos</a>
+            <a href="/drones-para-ninos-mexico">Para Niños</a>
+            <a href="/mini-drones-bolsillo-mexico">Mini / Bolsillo</a>
+            <a href="/drones-fpv-mexico">FPV</a>
+            <a href="/drone-para-fotografia-aerea-mexico">Fotografía Aérea</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Especializado</div>
+            <a href="/drones-topografia-mexico">Topografía</a>
+            <a href="/drones-fumigacion-agricultura-mexico">Fumigación / Agro</a>
+          </div>
+        </div>
+      </div>
       <a class="nav-cta" href="/">VER RANKING 2026</a>
     </div>
     <button class="mob-btn" onclick="document.querySelector('.nav').classList.toggle('mob-open')" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -2593,61 +2651,52 @@
     </div>
   </section>
   <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Drones<span>360</span>.mx</div>
-        <div class="footer-desc">Tu guía experta para comprar el dron perfecto en México 2026. Reseñas reales, precios
-          actualizados y consejos de vuelo.</div>
-      </div>
-      <div>
-        <h4
-          style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.8rem">
-          Mejores Modelos</h4>
-        <ul style="list-style:none">
-          <li style="margin-bottom:.38rem"><a href="dji-mini-4-pro-precio-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">DJI Mini 4 Pro</a></li>
-          <li style="margin-bottom:.38rem"><a href="dji-air-3s-review-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">DJI Air 3S</a></li>
-          <li style="margin-bottom:.38rem"><a href="dji-neo-precio-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">DJI Neo</a></li>
-          <li style="margin-bottom:.38rem"><a href="mini-drones-bolsillo-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Mini Drones</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4
-          style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.8rem">
-          Por Uso</h4>
-        <ul style="list-style:none">
-          <li style="margin-bottom:.38rem"><a href="drone-para-fotografia-aerea-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Fotografía Aérea</a>
-          </li>
-          <li style="margin-bottom:.38rem"><a href="drones-para-principiantes-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Para Principiantes</a>
-          </li>
-          <li style="margin-bottom:.38rem"><a href="drones-para-ninos-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Para Niños</a></li>
-          <li style="margin-bottom:.38rem"><a href="drones-fpv-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">FPV Racing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4
-          style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.8rem">
-          Información</h4>
-        <ul style="list-style:none">
-          <li style="margin-bottom:.38rem"><a href="/"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Ranking 2026</a></li>
-          <li style="margin-bottom:.38rem"><a href="regulaciones-drones-mexico-afac.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Leyes AFAC</a></li>
-          <li style="margin-bottom:.38rem"><a href="drones-baratos-mexico.html"
-              style="font-size:.88rem;font-weight:300;color:var(--text3);transition:color .15s">Guía de Compra</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bot"><span>© 2026 Drones360.mx</span><span>Afiliado de MercadoLibre México. Precios sujetos a
-        cambio.</span></div>
-  </footer>
+<div class="footer-grid">
+  <div>
+    <div class="footer-logo">DRONES<span>360</span>.mx</div>
+    <p class="footer-desc">La guía más completa de drones en México. Análisis técnico, precios actualizados y comparativas sin publicidad disfrazada.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Reviews</h4>
+    <ul>
+      <li><a href="/dji-mini-4-pro-precio-mexico">DJI Mini 4 Pro</a></li>
+      <li><a href="/dji-air-3s-review-mexico">DJI Air 3S</a></li>
+      <li><a href="/dji-avata-2-precio-mexico">DJI Avata 2</a></li>
+      <li><a href="/dji-neo-precio-mexico">DJI Neo</a></li>
+      <li><a href="/dji-mini-4k-precio-mexico">DJI Mini 4K</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Guías</h4>
+    <ul>
+      <li><a href="/cuanto-cuesta-drone-mexico">¿Cuánto Cuesta un Drone?</a></li>
+      <li><a href="/que-es-un-drone-guia-completa">¿Qué es un Drone?</a></li>
+      <li><a href="/regulaciones-drones-mexico-afac">Regulaciones AFAC</a></li>
+      <li><a href="/drones-sin-registro-afac-mexico">Sin Registro AFAC</a></li>
+      <li><a href="/dji-mini-4-pro-vs-dji-air-3s">Mini 4 Pro vs Air 3S</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Categorías</h4>
+    <ul>
+      <li><a href="/drones-para-principiantes-mexico">Principiantes</a></li>
+      <li><a href="/drones-profesionales-mexico">Profesionales</a></li>
+      <li><a href="/drones-4k-mexico">Drones 4K</a></li>
+      <li><a href="/drones-baratos-mexico">Baratos</a></li>
+      <li><a href="/drones-para-ninos-mexico">Para Niños</a></li>
+      <li><a href="/mini-drones-bolsillo-mexico">Mini / Bolsillo</a></li>
+      <li><a href="/drones-fpv-mexico">FPV</a></li>
+      <li><a href="/drone-para-fotografia-aerea-mexico">Fotografía Aérea</a></li>
+      <li><a href="/drones-topografia-mexico">Topografía</a></li>
+      <li><a href="/drones-fumigacion-agricultura-mexico">Fumigación / Agro</a></li>
+    </ul>
+  </div>
+</div>
+<div class="footer-bot">
+  <span>© 2026 Drones360.mx — Afiliado de MercadoLibre México</span>
+  <span>Precios sujetos a cambios. Todos los precios en MXN.</span>
+</div>
+</footer>
   <div class="sticky-bar" id="stickyBar">
     <div class="sb-info"><span class="sb-name">Mini Drones</span><span class="sb-price">desde $390 MXN</span></div>
     <a class="sb-buy" href="https://meli.la/2JWA2AE" rel="noopener sponsored" target="_blank">🛒 Comprar en
@@ -2661,7 +2710,10 @@
     function toggleFaq(btn) { const ans = btn.nextElementSibling; const wasOpen = btn.classList.contains('open'); document.querySelectorAll('.faq-q.open').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); }); if (!wasOpen) { btn.classList.add('open'); ans.classList.add('open'); } }
     const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { if (e.target.id === 'scores') { document.querySelectorAll('.os-fill').forEach(f => { f.classList.add('animated'); }); document.querySelectorAll('.sb-fill').forEach(bar => { bar.style.width = bar.dataset.w || '0%'; }); } observer.unobserve(e.target); } }); }, { threshold: .25 });
     const scoresSec = document.getElementById('scores'); if (scoresSec) observer.observe(scoresSec);
-  document.querySelectorAll('.nav-lnk,.nav-cta').forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav').classList.remove('mob-open')));</script>
+  document.querySelectorAll('.nav-lnk,.nav-cta').forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav').classList.remove('mob-open')));
+// Close mega menu on outside click
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-mega-wrap')){document.querySelectorAll('.nav-mega-wrap').forEach(w=>w.classList.remove('mega-open'))}});
+</script>
 </body>
 
 </html>
