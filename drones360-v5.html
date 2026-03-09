@@ -133,7 +133,7 @@ body:hover #spotlight{opacity:1}
 }
 @keyframes breathe{from{opacity:.6}to{opacity:1}}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 20%,transparent 100%);z-index:0}
-.hero-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center}
+.hero-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr minmax(280px,420px);gap:3rem;align-items:center}
 .hero-left{display:flex;flex-direction:column}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-family:"Inter",sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
 .hero-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:dotPulse 2s infinite;box-shadow:0 0 8px var(--cyan)}
@@ -174,7 +174,7 @@ h1.hero-h .hi-accent{background:linear-gradient(135deg,var(--blue),var(--cyan));
 .haw-ico{font-size:.95rem}
 .haw-t{font-size:.82rem;font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);display:block}
 .haw-n{font-size:.82rem;font-weight:600;font-family:"Inter",sans-serif;color:var(--text);display:block;line-height:1.2}
-@media(max-width:1000px){.hero-inner{grid-template-columns:1fr}.hero-right{display:none}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:1.5rem}.hero-right{display:none}}
 @media(max-width:480px){.hero-trust{grid-template-columns:repeat(2,1fr)}}
 
 /* ══════════ DISCLOSURE ══════════ */
@@ -290,8 +290,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
 .cmp-btn.chk{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 12px var(--blue-glow)}
 
 /* Card visual area */
-.card:hover .drone-img { transform: scale(1.15) translateY(-6px) !important; filter: drop-shadow(0 12px 24px rgba(0,207,255,0.3)) !important; }
-.drone-img { position: relative; z-index: 2; border-radius: 8px; }
+.card:hover .drone-img { transform: scale(1.05) translateY(-4px) !important; filter: drop-shadow(0 8px 16px rgba(0,207,255,0.2)) !important; }
+.drone-img { position: relative; z-index: 1; border-radius: 8px; }
 
 .card-visual{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .card-visual::before{content:"";position:absolute;inset:0;background:var(--vbg,radial-gradient(circle at 50% 40%,rgba(61,127,255,.12),transparent));transition:opacity .3s}
@@ -520,7 +520,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 .mob-open .mob-btn span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .mob-open .mob-btn span:nth-child(2){opacity:0}
 .mob-open .mob-btn span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-@media(max-width:600px){.mob-btn{display:flex}.nav-links{display:none!important}.nav-search{display:none!important}.nav.mob-open .nav-links{display:flex!important;position:fixed;top:58px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(24px);flex-direction:column;padding:2rem 1.5rem;gap:0;z-index:499;list-style:none}.nav.mob-open .nav-links li{width:100%}.nav.mob-open .nav-links li a{display:block;font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid var(--rim);color:var(--text2);font-weight:500}}}</style>
+@media(max-width:900px){.mob-btn{display:flex}.nav-links{display:none!important}.nav-search{display:none!important}.nav.mob-open .nav-links{display:flex!important;position:fixed;top:58px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(24px);flex-direction:column;padding:2rem 1.5rem;gap:0;z-index:499;list-style:none;overflow-y:auto}.nav.mob-open .nav-links li{width:100%}.nav.mob-open .nav-links li a{display:block;font-size:1.1rem;padding:.85rem 0;border-bottom:1px solid var(--rim);color:var(--text2);font-weight:500}}}</style>
 </head>
 <body>
 <!-- SPOTLIGHT CURSOR EFFECT -->
@@ -537,11 +537,11 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <input aria-label="Buscar drones" id="nsearch" oninput="searchF()" placeholder="Buscar drone..." type="search"/>
 </div>
 <ul class="nav-links">
-<li><a href="drones360-v5.html">Ranking 2026</a></li>
-<li><a href="drones-para-principiantes-mexico.html">Principiantes</a></li>
-<li><a href="drones-fpv-mexico.html">FPV</a></li>
-<li><a href="drone-para-fotografia-aerea-mexico.html">Cámara Pro</a></li>
-<li><a href="regulaciones-drones-mexico-afac.html">AFAC</a></li>
+<li><a href="/">Ranking 2026</a></li>
+<li><a href="drones-para-principiantes-mexico">Principiantes</a></li>
+<li><a href="drones-fpv-mexico">FPV</a></li>
+<li><a href="drone-para-fotografia-aerea-mexico">Cámara Pro</a></li>
+<li><a href="regulaciones-drones-mexico-afac">AFAC</a></li>
 </ul>
 <button class="mob-btn" onclick="document.querySelector('.nav').classList.toggle('mob-open')" aria-label="Menú"><span></span><span></span><span></span></button>
 </div>
@@ -1571,7 +1571,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <div class="sp-visual">
 <div class="sp-visual-bg" style="background:radial-gradient(circle at 50% 40%,rgba(61,127,255,.18),rgba(61,127,255,.04));"></div>
 <div class="sp-rank">01</div>
-<img alt="DJI Mini 4 Pro" class="drone-img" loading="lazy" src="./assets/drones/dji-mini-4-pro.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transform: scale(1.1); transition: transform 0.3s ease; position: relative; z-index: 2; border-radius: 12px;"/>
+<img alt="DJI Mini 4 Pro" class="drone-img" loading="lazy" src="./assets/drones/dji-mini-4-pro.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.3s ease; position: relative; z-index: 1; border-radius: 12px;"/>
 </div>
 <div class="sp-content">
 <div class="sp-badge" style="color:#3d7fff">#1 Ranking · ⭐ Mejor Todo Terreno</div>
@@ -1597,7 +1597,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <div class="sp-visual">
 <div class="sp-visual-bg" style="background:radial-gradient(circle at 50% 40%,rgba(0,255,136,.12),rgba(0,255,136,.02));"></div>
 <div class="sp-rank">02</div>
-<img alt="DJI Air 3S" class="drone-img" loading="lazy" src="./assets/drones/dji-air-3s.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transform: scale(1.1); transition: transform 0.3s ease; position: relative; z-index: 2; border-radius: 12px;"/>
+<img alt="DJI Air 3S" class="drone-img" loading="lazy" src="./assets/drones/dji-air-3s.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.3s ease; position: relative; z-index: 1; border-radius: 12px;"/>
 </div>
 <div class="sp-content">
 <div class="sp-badge" style="color:#00ff88">#2 Ranking · 🏆 Mejor Cámara 2026</div>
@@ -1623,7 +1623,7 @@ footer{background:var(--deep);border-top:1px solid var(--rim);padding:2.5rem cla
 <div class="sp-visual">
 <div class="sp-visual-bg" style="background:radial-gradient(circle at 50% 40%,rgba(255,184,0,.14),rgba(255,184,0,.02));"></div>
 <div class="sp-rank">03</div>
-<img alt="DJI Mavic 3 Pro" class="drone-img" loading="lazy" src="./assets/drones/dji-mavic-3-pro.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transform: scale(1.1); transition: transform 0.3s ease; position: relative; z-index: 2; border-radius: 12px;"/>
+<img alt="DJI Mavic 3 Pro" class="drone-img" loading="lazy" src="./assets/drones/dji-mavic-3-pro.jpg" style="width: 240px; height: auto; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.3s ease; position: relative; z-index: 1; border-radius: 12px;"/>
 </div>
 <div class="sp-content">
 <div class="sp-badge" style="color:#ffb800">#3 Ranking · 🎬 Mejor Para Cine</div>

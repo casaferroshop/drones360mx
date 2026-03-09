@@ -1,10 +1,9 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/drones360-v5.html" },
-    { "source": "/mejores-drones-mexico-2025", "destination": "/drones360-v5.html" },
-    { "source": "/mejores-drones-mexico-2025/", "destination": "/drones360-v5.html" },
-    { "source": "/mejores-drones-mexico-2026", "destination": "/drones360-v5.html" },
-    { "source": "/mejores-drones-mexico-2026/", "destination": "/drones360-v5.html" },
+    { "source": "/mejores-drones-mexico-2026", "destination": "/index.html" },
+    { "source": "/mejores-drones-mexico-2026/", "destination": "/index.html" },
+    { "source": "/mejores-drones-mexico-2025", "destination": "/index.html" },
+    { "source": "/mejores-drones-mexico-2025/", "destination": "/index.html" },
     { "source": "/:path", "destination": "/:path.html" },
     { "source": "/:path/", "destination": "/:path.html" }
   ],
